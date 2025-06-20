@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('programas', function (Blueprint $table) {
+        Schema::create('tipos_programas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('idtipo_programa')->unsigned();
-            $table->string('program');
-            $table->timestamps();
-
-            $table->foreign('idtipo_programa')->references('id')->on('tipos_programas');
+            $table->string('program_type');
+            $table->string('n_quarters');
+            $table->timestamps();   
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('programas');
+        Schema::dropIfExists('tipos_programas');
     }
 };

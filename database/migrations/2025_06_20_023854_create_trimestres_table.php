@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('trimestres', function (Blueprint $table) {
             $table->id();
+            $table->string('quarter');
+            $table->string('state');
             $table->timestamps();
         });
     }
