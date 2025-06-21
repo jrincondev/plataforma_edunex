@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    
+    Route::get('/admin/horario', [App\Http\Controllers\HorarioController::class, 'index'])->name('admin.horario.index');
+    Route::get('/admin/horario', [HorarioController::class, 'index']);
 });
