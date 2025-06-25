@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('fichas', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('idprograma')->unsigned();
+            $table->string('n_sheet');
+
+            $table->foreign('idprograma')->references('id')->on('programas');
             $table->timestamps();
         });
     }

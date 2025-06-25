@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('trimestres', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('idficha')->unsigned();
             $table->string('quarter');
             $table->string('state');
+
+            $table->foreign('idficha')->references('id')->on('fichas');
             $table->timestamps();
         });
     }
